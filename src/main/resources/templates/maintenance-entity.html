@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification de Maintenance Préventive</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #007bff; /* Bleu Bootstrap */
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .logo {
+            color: #007bff;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: block;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #007bff;
+            background-color: #e7f2ff;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .details-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #6c757d;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+            padding-top: 20px;
+        }
+        .signature {
+            margin-top: 30px;
+            color: #495057;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <span class="logo">Gestion Équipements</span>
+        <h1>Notification de Maintenance Préventive</h1>
+    </div>
+
+    <p>Bonjour,</p>
+
+    <p>Ceci est une notification concernant la maintenance préventive de <span th:text="${entityType}">[type d'entité]</span> :</p>
+
+    <div class="details-box">
+        <p>La maintenance préventive de <span class="highlight" th:text="${entityType}">[type d'entité]</span> <span class="highlight" th:text="${entityName}">[Nom de l'entité]</span> avec le code série <span class="highlight" th:text="${serialCode}">[Code Série]</span> à <span class="highlight" th:text="${hospitalName}">[Nom de l'Hôpital]</span> est prévue aujourd'hui.</p>
+    </div>
+
+    <p th:text="${notificationMessage}">[Message original]</p>
+
+    <p>Il est important de s'assurer que cette maintenance soit effectuée pour garantir le bon fonctionnement des équipements associés.</p>
+
+    <p> <a href="http://localhost:3000/manage-maintenance/trackMaintenance">Cliquez ici pour consulter les détails de la maintenance</a></p>
+
+    <p>Pour toute question, veuillez contacter le service de maintenance.</p>
+
+    <div class="signature">
+        <p>Cordialement,</p>
+        <p><strong>Le service de maintenance des équipements médicaux</strong></p>
+    </div>
+
+    <div class="footer">
+        <p>Ce message a été généré automatiquement. Merci de ne pas y répondre.</p>
+        <p>© 2025 Système de Gestion des Équipements Médicaux</p>
+    </div>
+</div>
+</body>
+</html>

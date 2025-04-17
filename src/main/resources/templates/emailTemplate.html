@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmation de Réinitialisation de Mot de Passe</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      padding: 20px;
+    }
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .header {
+      background-color: #0066cc;
+      text-align: center;
+      padding: 20px;
+    }
+    .header img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .content {
+      padding: 20px;
+    }
+    .content h3 {
+      color: #0066cc;
+    }
+    .reset-link {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #28a745;
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+<div class="email-container">
+  <div class="header">
+    <img src="https://essect.rnu.tn/useruploads/banners/315861398010_03_23_21.jpg" alt="Welcome Image">
+  </div>
+
+  <div class="content">
+    <p>Bonjour <span th:text="${firstname}"></span> <span th:text="${lastname}"></span>,</p>
+
+    <h3 th:text="${subject}">Confirmation de Réinitialisation de Mot de Passe</h3>
+
+    <p th:text="${confirmationMessage}">
+      Votre mot de passe a été réinitialisé avec succès. Veuillez suivre le lien ci-dessous pour définir un nouveau mot de passe :
+    </p>
+
+    <a th:href="'http://localhost:3000/reset-password/' + ${token}" class="reset-link">
+      Réinitialiser le mot de passe
+    </a>
+  </div>
+</div>
+</body>
+</html>

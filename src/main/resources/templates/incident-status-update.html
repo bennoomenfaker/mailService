@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Notification d'incident</title>
+</head>
+<body>
+<h2>📋 Mise à jour d’un incident</h2>
+
+<p>L'incident lié à l’équipement <strong th:text="${equipmentName}"></strong>
+  (Code : <strong th:text="${serialCode}"></strong>) a changé de statut :</p>
+
+<ul>
+  <li>Ancien statut : <strong th:text="${oldStatus}"></strong></li>
+  <li>Nouveau statut : <strong th:text="${newStatus}"></strong></li>
+  <li>Description : <span th:text="${description}"></span></li>
+</ul>
+
+<p>Mis à jour par : <strong th:text="${initiatorFullName}"></strong>
+  (<span th:text="${initiatorEmail}"></span>)</p>
+
+<p>Merci de prendre les mesures nécessaires.</p>
+</body>
+</html>

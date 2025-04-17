@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changement d'Hôpital</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #0d6efd;
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .logo {
+            color: #0d6efd;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: block;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #0d6efd;
+            background-color: #f0f7ff;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .details-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #0d6efd;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #6c757d;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+            padding-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #0d6efd;
+            color: white !important;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+        .signature {
+            margin-top: 30px;
+            color: #495057;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <span class="logo">Gestion Équipements</span>
+        <h1>Transfert d'Équipement Médical</h1>
+    </div>
+
+    <p>Bonjour,</p>
+
+    <p>Nous vous informons qu'un transfert d'équipement médical a été effectué :</p>
+
+    <div class="details-box">
+        <p>L'équipement <span class="highlight">[[${serialCode}]]</span> a été transféré :</p>
+        <p>De : <span class="highlight">[[${oldHospitalName}]]</span><br>
+            Vers : <span class="highlight">[[${newHospitalName}]]</span></p>
+    </div>
+
+    <p><strong>Détails de l'équipement :</strong></p>
+    <ul>
+        <li><strong>Nom :</strong> [[${equipmentName}]]</li>
+        <li><strong>Description :</strong> [[${description}]]</li>
+        <li><strong>Code série :</strong> [[${serialCode}]]</li>
+    </ul>
+
+    <p> <a href="http://localhost:3000">Cliquez ici pour consulter les détails de l'équipement</a></p>
+
+    <h3> Message pour l'hôpital récepteur</h3>
+    <p>Merci d'ajouter cet équipement à votre inventaire en utilisant le lien ci-dessous :</p>
+    <p>🔗 <a href="http://localhost:3000/manage-equipments/add-new-equipment-to-hospital">Ajouter l'équipement à votre hôpital</a></p>
+
+    <p>Entrez le code série <strong>[[${serialCode}]]</strong> pour finaliser l'ajout.</p>
+    <p>Pour toute question concernant ce transfert, veuillez contacter l'équipe de maintenance de l'hôpital de destination.</p>
+
+    <div class="signature">
+        <p>Cordialement,</p>
+        <p><strong>L'équipe de gestion des équipements</strong></p>
+    </div>
+
+    <div class="footer">
+        <p>Ce message a été généré automatiquement. Merci de ne pas y répondre.</p>
+        <p>© 2025 Système de Gestion des Équipements Médicaux</p>
+    </div>
+</div>
+</body>
+</html>

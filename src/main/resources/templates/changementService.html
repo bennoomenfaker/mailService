@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification de transfert d'équipement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .email-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .email-header {
+            background-color: #0073e6;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .email-header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .email-body {
+            padding: 20px;
+        }
+        .email-body p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .email-body a {
+            color: #0073e6;
+            text-decoration: none;
+        }
+        .email-footer {
+            background-color: #f4f4f9;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+        }
+        .btn {
+            background-color: #0073e6;
+            color: black;
+            padding: 12px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="email-container">
+    <div class="email-header">
+        <h1>Notification de transfert d'équipement</h1>
+    </div>
+
+    <div class="email-body">
+        <p>Bonjour [[${firstName}]] [[${lastName}]],</p>
+
+        <p>Nous vous informons qu'un équipement a été transféré du service <strong>[[${oldServiceName}]]</strong> vers le service <strong>[[${newServiceName}]]</strong>.</p>
+
+        <p>Voici les détails de l'équipement :</p>
+
+        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: left; font-weight: bold;">Code Serial</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">[[${serialCode}]]</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: left; font-weight: bold;">Nom de l'équipement</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">[[${equipmentName}]]</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: left; font-weight: bold;">Description</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">[[${description}]]</td>
+            </tr>
+        </table>
+
+        <p>Vous pouvez consulter les détails de l'équipement et effectuer des actions en cliquant sur le lien ci-dessous :</p>
+
+        <a href="http://localhost:3000" class="btn">Consulter l'équipement</a>
+
+
+    </div>
+
+    <div class="email-footer">
+        <p>Ministère de la Santé - Toutes les informations concernant le transfert d'équipement sont confidentielles et destinées uniquement aux parties concernées.</p>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation de réinitialisation de mot de passe</title>
+    <style>
+        body {
+          font-family: 'Arial', sans-serif;
+          background-color: #f9f9f9;
+          color: #333;
+          padding: 20px;
+        }
+        .email-container {
+          max-width: 600px;
+          margin: 0 auto;
+          background: #ffffff;
+          border-radius: 10px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+        }
+        .header {
+          background-color: #0066cc;
+          text-align: center;
+          padding: 20px;
+        }
+        .header img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 10px;
+        }
+        .content {
+          padding: 20px;
+        }
+        .content h3 {
+          color: #0066cc;
+        }
+        .reset-link {
+          display: inline-block;
+          margin-top: 20px;
+          background-color: #28a745;
+          color: white;
+          text-decoration: none;
+          padding: 10px 15px;
+          border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="email-container">
+    <div class="header">
+        <img src="https://essect.rnu.tn/useruploads/banners/315861398010_03_23_21.jpg" alt="Welcome Image">
+    </div>
+
+    <div class="content">
+        <p>Bonjour <span th:text="${firstname}"></span> <span th:text="${lastname}"></span>,</p>
+
+        <h3 th:text="${subject}">Confirmation de réinitialisation de mot de passe</h3>
+        <p th:text="${confirmationMessage}">Votre mot de passe a été réinitialisé avec succès.</p>
+    </div>
+</div>
+</body>
+</html>
