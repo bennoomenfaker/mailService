@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nouvel équipement</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background-color: #f8f9fa; padding: 15px; text-align: center; }
+        .content { padding: 20px; }
+        .footer { margin-top: 20px; font-size: 0.9em; color: #6c757d; }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        ul { padding-left: 20px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Nouvel équipement affecté</h1>
+    </div>
+
+    <div class="content">
+        <p>Un nouvel équipement a été affecté à votre hôpital <strong th:text="${hospitalName}">Nom hôpital</strong>.</p>
+
+        <h2>Détails de l'équipement</h2>
+        <ul>
+            <li><strong>Nom :</strong> <span th:text="${equipmentName}">Nom équipement</span></li>
+            <li><strong>Code série :</strong> <span th:text="${serialCode}">Code série</span></li>
+            <li><strong>Date d'acquisition :</strong> <span th:text="${acquisitionDate}">Date d'acquisition</span></li>
+            <li><strong>Montant :</strong> <span th:text="${amount}">Montant</span></li>
+            <li><strong>Début de garantie :</strong> <span th:text="${startDateWarranty}">Début de garantie</span></li>
+            <li><strong>Fin de garantie :</strong> <span th:text="${endDateWarranty}">Fin de garantie</span></li>
+        </ul>
+
+        <p>Veuillez ajouter cet équipement à votre inventaire en cliquant sur le bouton ci-dessous :</p>
+
+        <p>
+            <a th:href="${addToInventoryLink}" class="button">Ajouter à l'inventaire</a>
+        </p>
+
+        <p>Ou en utilisant le code série suivant : <strong th:text="${serialCode}">Code série</strong></p>
+    </div>
+
+    <div class="footer">
+        <p>Ceci est un message automatique, merci de ne pas y répondre.</p>
+    </div>
+</div>
+</body>
+</html>

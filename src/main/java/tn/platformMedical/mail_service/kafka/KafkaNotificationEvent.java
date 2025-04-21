@@ -26,7 +26,7 @@ public class KafkaNotificationEvent {
     private final ObjectMapper objectMapper;
     private final TemplateEngine templateEngine;
 
-    private static final String TOPIC_NAME = "notification-events";
+    private static final String TOPIC_NAME = "notification-events-mail";
 
     @KafkaListener(topics = TOPIC_NAME, groupId = "email-service-group")
     public void listenMaintenanceNotification(String message) {
